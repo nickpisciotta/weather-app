@@ -1,4 +1,5 @@
 const yargs = require ('yargs'); 
+const axios = require ('axios'); 
 
 const argv = yargs 
   .options({
@@ -14,4 +15,10 @@ const argv = yargs
   .argv; 
 
 
- 
+var encodedAddress = encodeURIComponent(argv.address); 
+var geocodeURL = `https://maps.googleapis.com/maps/api/geocode/json?address=${encodedAddress}`; 
+
+axios.get(geocodeURL).then((response) => {
+  
+}); 
+
